@@ -6,6 +6,8 @@ type ServiceCard = {
   body: ReactNode[]
   image: string
   cta?: { href: string; label: string }
+  /** Optional BEM modifier for card-specific layout (e.g. image crop). */
+  cardModifier?: string
 }
 
 const SERVICES: ServiceCard[] = [
@@ -22,7 +24,7 @@ const SERVICES: ServiceCard[] = [
       <>• Sparks and <strong>burning smells</strong> from outlets.</>,
     ],
     image: '/images/Electrician-working-on-electrical-outlet.png',
-    cta: { href: '#contact', label: 'Get 14% Off' },
+    cta: { href: '#contact', label: 'Get 15% Off' },
   },
   {
     title: 'Pot Lights (Recessed Lighting)',
@@ -102,8 +104,9 @@ const SERVICES: ServiceCard[] = [
         Call an <strong>expert electrician near you</strong>.
       </>,
     ],
-    image: '/images/ChatGPT-Image-Apr-9-2026-03_45_32-AM.png',
+    image: '/images/not-sure-whats-wrong.png',
     cta: { href: '#contact', label: 'Talk to an Electrician' },
+    cardModifier: 'not-sure',
   },
 ]
 
@@ -119,7 +122,10 @@ export function ServicesSection() {
       </div>
       <div className="services-grid">
         {SERVICES.map((s) => (
-          <article key={s.title} className="service-card">
+          <article
+            key={s.title}
+            className={`service-card${s.cardModifier ? ` service-card--${s.cardModifier}` : ''}`}
+          >
             <img src={s.image} alt="" loading="lazy" width={1024} height={768} />
             <div className="service-content">
               <div className="service-copy">

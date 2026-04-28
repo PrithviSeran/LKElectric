@@ -30,6 +30,33 @@
   display: block;
 }
 
+.site-header__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  background: #fff;
+  border: 2px solid var(--lk-orange);
+  border-radius: 999px;
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 700;
+  color: var(--lk-text);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-header__phone:hover {
+  border-color: var(--lk-orange-hover);
+  color: var(--lk-text);
+}
+
+.site-header__phone svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .site-header__navWrap {
   display: flex;
   align-items: center;
@@ -60,6 +87,10 @@
 
 .site-header__cta {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .site-header__estimate {
@@ -133,10 +164,19 @@
     padding-top: 12px;
     border-top: 1px solid var(--lk-card-border);
     margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
   }
 
-  .site-header__cta .site-header__estimate {
-    width: 100%;
+  .site-header__cta .site-header__estimate,
+  .site-header__cta .site-header__phone {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    width: auto;
   }
 }
 
@@ -380,6 +420,11 @@
   height: 232px;
   flex-shrink: 0;
   object-fit: cover;
+}
+
+/* Framing for “Not Sure What’s Wrong?” — face + outlet visible (cover crop) */
+.service-card--not-sure img {
+  object-position: 44% 32%;
 }
 
 .service-content {
