@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* LK Electric brand — subtle orange accents from logo palette */
+  --lk-orange: #e0630f;
+  --lk-orange-bright: #f27405;
+  --lk-orange-hover: #f28a38;
+  --lk-orange-muted: rgba(240, 99, 15, 0.12);
+  --lk-accent-line: rgba(240, 99, 15, 0.35);
+  --lk-maroon-accent: #9e2f3f;
+  --lk-text: #171c24;
+  --lk-muted: #56606e;
+  --lk-bg: #f4f6f9;
+  --lk-bg-soft: #eef1f6;
+  --lk-surface: #ffffff;
+  --lk-card-border: rgba(20, 30, 45, 0.08);
+  --lk-shadow: 0 6px 32px rgba(20, 30, 45, 0.07);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Montserrat, system-ui, -apple-system, sans-serif;
+  background: var(--lk-bg);
+  color: var(--lk-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
