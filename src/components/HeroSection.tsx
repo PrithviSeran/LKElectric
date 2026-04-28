@@ -1,3 +1,5 @@
+import { PHONE_DISPLAY } from '../lib/constants'
+
 const HERO_BG = '/images/ChatGPT-Image-Apr-27-2026-03_06_40-PM.png'
 
 export function HeroSection() {
@@ -17,12 +19,12 @@ export function HeroSection() {
           <span className="hero__title-line">
             Get Your Electrical Issues Fixed for
           </span>
-          <span className="hero__title-highlight">15% Off!</span>
+          <span className="hero__title-highlight">14% Off!</span>
         </h1>
 
         <div className="hero__actions">
           <a className="hero__btn hero__btn--primary" href="#contact">
-            Find Your Electrical Service
+            Find Your Electrical Service - {PHONE_DISPLAY}
           </a>
           <div className="hero__actions-row" aria-label="Service areas">
             <a className="hero__btn hero__btn--ghost" href="#contact">
