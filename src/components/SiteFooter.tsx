@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
 
 export function SiteFooter() {
   return (
@@ -19,13 +19,13 @@ export function SiteFooter() {
         <div>
           <h3>Contact</h3>
           <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           <a href="#contact">Request an estimate</a>
         </div>
         <div>
           <h3>Service areas</h3>
           <span style={{ fontSize: 15, lineHeight: 1.7 }}>
-            Toronto, Scarborough, North York, Mississauga, Brampton, Oakville, Vaughan, Burlington
-            &amp; GTA
+            Scarborough, North York, Pickering, Markham, Etobicoke, Toronto &amp; GTA
           </span>
         </div>
       </div>

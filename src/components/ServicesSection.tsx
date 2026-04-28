@@ -22,7 +22,7 @@ const SERVICES: ServiceCard[] = [
       <>• Sparks and <strong>burning smells</strong> from outlets.</>,
     ],
     image: '/images/Electrician-working-on-electrical-outlet.png',
-    cta: { href: '#contact', label: 'Get 3% Off' },
+    cta: { href: '#contact', label: 'Get 14% Off' },
   },
   {
     title: 'Pot Lights (Recessed Lighting)',

@@ -17,29 +17,24 @@ const LOCAL_SLIDES = [
     bg: '/images/f86ba256-639b-40d2-9ee8-44e2d537e219.avif',
   },
   {
-    city: 'Mississauga',
-    desc: '3 Electricians Available.',
-    bg: '/images/5694-jenvic-grove-mississauga-W11904582-1.jpg',
+    city: 'Pickering',
+    desc: '2 Electricians Available.',
+    bg: '/images/googlemaps_westoaktrails.webp',
   },
   {
-    city: 'Vaughan',
-    desc: '4 Electricians Available.',
+    city: 'Markham',
+    desc: '3 Electricians Available.',
     bg: '/images/cq5dam.web_.1280.1280.jpeg',
   },
   {
-    city: 'Brampton',
+    city: 'Etobicoke',
     desc: '2 Electricians Available.',
     bg: '/images/cq5dam.web_.1280.1280-1.jpeg',
   },
   {
-    city: 'Burlington',
-    desc: '2 Electricians Available.',
-    bg: '/images/dynes_neighbourhood_burlington.png',
-  },
-  {
-    city: 'Oakville',
-    desc: '2 Electricians Available.',
-    bg: '/images/googlemaps_westoaktrails.webp',
+    city: 'Toronto',
+    desc: '4 Electricians Available.',
+    bg: '/images/5694-jenvic-grove-mississauga-W11904582-1.jpg',
   },
 ]
 

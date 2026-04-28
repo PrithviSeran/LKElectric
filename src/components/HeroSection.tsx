@@ -26,13 +26,10 @@ export function HeroSection() {
           </a>
           <div className="hero__actions-row" aria-label="Service areas">
             <a className="hero__btn hero__btn--ghost" href="#contact">
-              Scarborough | North York | Markham
+              Scarborough | North York | Pickering
             </a>
             <a className="hero__btn hero__btn--ghost" href="#contact">
-              Mississauga | Brampton | Oakville
-            </a>
-            <a className="hero__btn hero__btn--ghost" href="#contact">
-              Vaughan | Burlington
+              Markham | Etobicoke | Toronto
             </a>
           </div>
         </div>

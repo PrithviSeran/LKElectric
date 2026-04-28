@@ -1,15 +1,51 @@
 import type { FormEvent } from 'react'
+import { useState } from 'react'
 
-import { PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
 
 const CONTACT_BG = '/images/531ce8fcbeeca0b364a2cfa855fa43b601c51fe9.jpg'
 
+/** FormSubmit free tier forwards JSON POST to the recipient inbox (requires one-time inbox activation email on first submission). */
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`
+
 export function ContactSection() {
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    window.alert(
-      'This is a standalone demo UI. Hook this form up to your email API or backend when you deploy.'
-    )
+    const form = e.currentTarget
+    const fd = new FormData(form)
+    const name = String(fd.get('name') ?? '').trim()
+    const email = String(fd.get('email') ?? '').trim()
+    const phone = String(fd.get('phone') ?? '').trim()
+    const needs = String(fd.get('needs') ?? '').trim()
+
+    setStatus('sending')
+
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: 'LK Electric — New website contact',
+          _replyto: email,
+          name,
+          email,
+          phone: phone || '(not provided)',
+          message: needs,
+        }),
+      })
+
+      if (!res.ok) throw new Error('Request failed')
+
+      setStatus('success')
+      form.reset()
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -37,7 +73,21 @@ export function ContactSection() {
             Call now — {PHONE_DISPLAY}
           </a>
         </div>
+        <p className="contact-email-note">
+          Or email{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </p>
         <form className="contact-form-panel" onSubmit={onSubmit}>
+          {status === 'success' ? (
+            <p className="contact-form-status contact-form-status--success" role="status">
+              Thanks — your message was sent. We&apos;ll reply soon.
+            </p>
+          ) : null}
+          {status === 'error' ? (
+            <p className="contact-form-status contact-form-status--error" role="alert">
+              Something went wrong. Please call {PHONE_DISPLAY} or email {CONTACT_EMAIL}.
+            </p>
+          ) : null}
           <label htmlFor="needs">Your Electrical Needs *</label>
           <textarea
             id="needs"
@@ -58,7 +108,9 @@ export function ContactSection() {
           />
           <label htmlFor="phone">Number</label>
           <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="Number" />
-          <button type="submit">Send</button>
+          <button type="submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending…' : 'Send'}
+          </button>
         </form>
       </div>
     </section>

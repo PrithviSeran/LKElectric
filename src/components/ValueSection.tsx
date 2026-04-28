@@ -38,9 +38,9 @@ export function ValueSection() {
               </svg>
             </div>
             <div className="ls-value-number">2</div>
-            <h3>3% Spring Discount</h3>
+            <h3>14% Discount</h3>
             <p>
-              Get 3% off your first hour on service calls with clear, competitive pricing.
+              Get 14% off your first hour on service calls with clear, competitive pricing.
             </p>
             <div className="ls-value-divider" />
             <a className="ls-value-btn" href="#contact">
