@@ -73,10 +73,6 @@ export function ContactSection() {
             Call now — {PHONE_DISPLAY}
           </a>
         </div>
-        <p className="contact-email-note">
-          Or email{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-        </p>
         <form className="contact-form-panel" onSubmit={onSubmit}>
           {status === 'success' ? (
             <p className="contact-form-status contact-form-status--success" role="status">
@@ -85,7 +81,7 @@ export function ContactSection() {
           ) : null}
           {status === 'error' ? (
             <p className="contact-form-status contact-form-status--error" role="alert">
-              Something went wrong. Please call {PHONE_DISPLAY} or email {CONTACT_EMAIL}.
+              Something went wrong. Please try again or call {PHONE_DISPLAY}.
             </p>
           ) : null}
           <label htmlFor="needs">Your Electrical Needs *</label>

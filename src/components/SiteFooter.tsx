@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
+import { PHONE_DISPLAY, PHONE_TEL } from '../lib/constants'
 
 export function SiteFooter() {
   return (
@@ -19,7 +19,6 @@ export function SiteFooter() {
         <div>
           <h3>Contact</h3>
           <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           <a href="#contact">Request an estimate</a>
         </div>
         <div>
