@@ -19,12 +19,13 @@ export function HeroSection() {
           <span className="hero__title-line">
             Get Your Electrical Issues Fixed for
           </span>
-          <span className="hero__title-highlight">15% Off!</span>
+          <span className="hero__title-highlight">14% Off!</span>
         </h1>
 
         <div className="hero__actions">
           <a className="hero__btn hero__btn--primary" href="#contact">
-            Find Your Electrical Service - {PHONE_DISPLAY}
+            <span className="hero__btn-label">Find your electrical service</span>
+            <span className="hero__btn-phone">{PHONE_DISPLAY}</span>
           </a>
           <div className="hero__actions-row" aria-label="Service areas">
             <a className="hero__btn hero__btn--ghost" href="#contact">
