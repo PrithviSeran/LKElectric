@@ -70,7 +70,7 @@ const SERVICES: ServiceCard[] = [
         • <strong>Burning smells</strong> or warm outlets.
       </>,
     ],
-    image: '/images/Old-fuse-holders-in-electrical-panel.png',
+    image: '/images/IMG_0316.jpeg',
     cta: { href: '#contact', label: 'Get Free Estimate' },
   },
   {
@@ -90,7 +90,7 @@ const SERVICES: ServiceCard[] = [
         • <strong>Install within 1 day (Start Charging ASAP)</strong>
       </>,
     ],
-    image: '/images/8.jpg',
+    image: '/images/IMG_0315.jpeg',
     cta: { href: '#contact', label: 'Request Install' },
   },
   {
