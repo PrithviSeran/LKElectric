@@ -59,7 +59,7 @@ export function HeroSection() {
         <div className="hero__title-rule" aria-hidden />
         <p className="hero__sub">
           <span className="hero__sub-line">Done Right the First Time –</span>
-          <span className="hero__sub-line">Open 6:00 AM - 9:00 PM</span>
+          <span className="hero__sub-line">Open 24/7</span>
         </p>
 
         <div className="hero__actions">
